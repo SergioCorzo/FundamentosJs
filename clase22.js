@@ -2,6 +2,10 @@ function Persona( nombre, apellido, altura, edad ){
     this.nombre = nombre
     this.apellido = apellido
     this.altura = altura
+
+    // Al usar arrow function dentro de un prototipo
+    // this hace referencia el objeto global. En este caso al 
+    // objeto window
     this.mayorDeEdad = () => this.edad >= 18
 }
 
