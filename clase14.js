@@ -32,7 +32,7 @@ const esMayorDeEdad = ( persona ) => {
 
 /*
 const esMayorDeEdad =  persona  => persona.edad >= MAYORIA_DE_EDAD
-//podemos omitir lod parentesis solo si es un solo parametro
+//podemos omitir los parentesis solo si es un solo parametro
 //que rrecibe la funcion
 */
 
@@ -40,7 +40,7 @@ const esMayorDeEdad = ({ edad }) => edad >= MAYORIA_DE_EDAD
 
 function imprimirMayoriaDeEdad( persona ){
     if( esMayorDeEdad( persona ) ){
-        console.log(`${person a.nombre} es mayor de edad.`)
+        console.log(`${persona.nombre} es mayor de edad.`)
     }else{
         console.log(`${persona.nombre} es menor de edad.`)
     }
