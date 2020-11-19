@@ -8,8 +8,11 @@ var sergio = {
 function imprimirPeso( peso, nombre ){
     console.log(`Peso actual de ${nombre} es de ${peso}`)
 }
-imprimirPeso( sergio.peso, sergio.nombre )
 
+const imprimirPeso2 = (peso, nombre) => 
+    console.log(`Peso actual de ${nombre} es de ${peso}`)
+imprimirPeso( sergio.peso, sergio.nombre )
+imprimirPeso2( sergio.peso, sergio.nombre)
 const META = sergio.peso - 3
 const INCREMENTO_DE_PESO = 0.3
 const aumentarDePeso = persona => persona.peso += INCREMENTO_DE_PESO

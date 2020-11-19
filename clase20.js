@@ -1,3 +1,5 @@
+// Arrays: funcion map
+
 var sergio = {
     nombre: 'Sergio',
     altura: 1.68,
@@ -41,15 +43,22 @@ var edduin = {
         altura: persona.altura *= 100
     }
 }*/
+
 var personas = [ sergio, pedro, juan, alma, xiomara, edduin ]
 console.table( personas )
 
 const pasarAlturaACms = persona => ( {
     ...persona,
-        altura: persona.altura *= 100
+        altura: persona.altura * 100
+
 } )
 
+var personaCms = personas.map( pasarAlturaACms )
 
-var personaCms = personas.map( pasarAlturaACms)
+for( let i = 0; i <= personas.length; i++ ){
+    console.log( personas[i])
+}
 
-console.log( personaCms)
+for( let i = 0; i <= personaCms.length; i++ ){
+    console.log( personaCms[i])
+}

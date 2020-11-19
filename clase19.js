@@ -1,3 +1,5 @@
+//Arrays: funcion filter
+
 var sergio = {
     nombre: 'Sergio',
     altura: 1.68,

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como funciona el tiempo en JavaScriptt</title>
+</head>
+<script>
+    setTimeout(() =>{ console.log('d')}, 2000)
+    console.log('a')
+    // setTimeout( function(){ console.log('b')}, 2000)
+    setTimeout(() =>{ console.log('b')}, 0)//esta arrow fuction es igual a la 
+    //funcion de arriba
+    // ¿Qué pasa si en vez de 2000 milisengu le ponemos 0 milisegundo ponemos 
+    // esta funcion al inicio del las demas funciones?
+    console.log('c')
+    // ¿Qué pasa si agregamos muchas tareas a la pila de ejecucion(callstack)?
+    for( var i = 0; i < 1000000000; i++){}
+</script>
+<body>
+    
+</body>
+</html>
