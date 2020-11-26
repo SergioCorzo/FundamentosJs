@@ -1,5 +1,5 @@
-//Hacer requets usando Promise y arrays para hacerlo en paralelo
-
+//Mejorar los requets usando async await
+//Es una manera mas sencilla
 const API_URL = 'https://swapi.dev/api/'
 const PEOPLE_URL = 'people/:id'
 const opts = { crossDomain: true}
@@ -19,15 +19,16 @@ function onError( id ){
     console.log(`Sucedió un error al obtener el id: ${id}`)
 }
 
+async function obtenerPersonajes(){ //Asi se indica que una funcion es asincrona
 var id = [ 1, 2, 3, 4, 5, 6, 7 ]
-/* var promesas = id.map( function( id ){
-    return obtenerPersonaje( id )
-})*/
-
 var promesas = id.map( id => obtenerPersonaje( id ) )
+try{//await pausa la funcion hasta obtener todas las promesas
+    var personajes = await Promise.all( promesas)//de esta manera se puede guardar las promesas obtenidas en una variable
+    personajes.forEach( (personaje, index )=>
+            console.log(`El personaje ${index + 1} es ${personaje.name}` ) )
+    }catch( id ){
+        onError( id )
+    }
+ }
 
-Promise
-    .all( promesas )
-    .then( personajes => personajes.forEach( (personaje, index )=>
-        console.log(`El personaje ${index + 1} es ${personaje.name}` ) ) )
-    .catch( onError )
+ obtenerPersonajes()
