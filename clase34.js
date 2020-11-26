@@ -19,7 +19,7 @@ function onError( id ){
     console.log(`Sucedió un error al obtener el id: ${id}`)
 }
 
-async function obtenerPersonajes(){ //Asi se indica que una funcion es asincrona
+const obtenerPersonajes = async ()=>{ //Asi se indica que una funcion es asincrona
 var id = [ 1, 2, 3, 4, 5, 6, 7 ]
 var promesas = id.map( id => obtenerPersonaje( id ) )
 try{//await pausa la funcion hasta obtener todas las promesas
