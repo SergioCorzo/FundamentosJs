@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras inmutables</title>
+</head>
+<body>
+    <script>
+        // Es importante evitar cambiar los valores durante la ejecucion
+        // Esto nos evitará futuros bugs
+        // Es recoendable usar estructuras inmutables
+        const sergio = {
+            nombre: 'Sergio',
+            apeelido: 'Corzo',
+            edad: 28
+        }
+        const cumpleanios = persona => ({
+            ...persona, 
+              edad: persona.edad + 1
+        })
+
+        class persona{
+            constructor( nombre, apellido){
+                this.nombre = nombre
+                this.apellido = apellido
+            }
+            setEdad( edad ){
+                return this.edad = edad
+            }
+        }
+       const Sergio = new persona( 'Sergio', 'Corzo')
+       const Fabiola = new persona( 'Fabiola', 'Navarro')
+       Sergio.setEdad( 30 )
+       console.log(`Hola ${Sergio.nombre} ${sergio.apeelido}. Edad:${Sergio.setEdad( 32 )}`)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clousure</title>
+</head>
+<body>
+    <script>
+        // Uso de clousure
+        // Es una forma de encapsulamiento. En JS puedes crear una funcion creadora 
+        // de funciones y despues retornarlas para guardarlas en una variable
+        function crearSaludo( fraseFinal){
+            function saludo( nombre ){
+                console.log(`Hola ${nombre} ${fraseFinal}`)
+            }
+            return saludo
+        }
+        function crearSaludos( fraseFinal){
+            if( fraseFinal === 'hombre' ){
+                function hombre( nombre ){
+                    console.log(`Hola  joven ${nombre} ${fraseFinal}`)
+                }
+            return hombre
+            }
+            if( fraseFinal === 'mujer' ){
+                function mujer( nombre ){
+                    console.log(`Hola señorita ${nombre} ${fraseFinal}`)
+                }
+            return mujer
+            }
+        }
+
+
+        const saludoMexicano = crearSaludo('wey')
+        const saludoArgentino = crearSaludo('che')
+        const saludoColombiano = crearSaludo('parse')
+        
+        const saludoHombre = crearSaludos('hombre')
+        const saludoMujer = crearSaludos('mujer')
+
+        saludoMexicano('Sergio')
+        saludoArgentino('Sergio')
+        saludoColombiano('Sergio')
+        saludoHombre('Sergio')
+        saludoMujer('Fabiola')
+    </script>
+    
+</body>
+</html>
